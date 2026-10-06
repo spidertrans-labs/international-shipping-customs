@@ -15,14 +15,18 @@
 
 ## CLI
 
+当前 CLI 通过 GitHub Release 发布，无需 npm 账号即可安装：
+
 ```bash
-npx @spidertrans/customs-cli countries
-npx @spidertrans/customs-cli check --country AU --item battery
-npx @spidertrans/customs-cli search "protein powder" --country CA
-npx @spidertrans/customs-cli check --country UK --item perfume --json
+npx https://github.com/spidertrans-labs/international-shipping-customs/releases/download/v0.1.0/spidertrans-customs-cli-0.1.0.tgz countries
+npx https://github.com/spidertrans-labs/international-shipping-customs/releases/download/v0.1.0/spidertrans-customs-cli-0.1.0.tgz check --country AU --item battery
+npx https://github.com/spidertrans-labs/international-shipping-customs/releases/download/v0.1.0/spidertrans-customs-cli-0.1.0.tgz search "protein powder" --country CA
+npx https://github.com/spidertrans-labs/international-shipping-customs/releases/download/v0.1.0/spidertrans-customs-cli-0.1.0.tgz check --country UK --item perfume --json
 ```
 
 `--json` 输出只包含数据，便于脚本和业务系统直接集成。
+
+npm 包名已保留为 `@spidertrans/customs-cli`，待 npm 注册可用后再发布相同功能。
 
 ## Local development
 

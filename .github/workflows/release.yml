@@ -1,0 +1,32 @@
+name: Release CLI
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @spidertrans/customs-cli build
+      - name: Pack CLI
+        run: |
+          mkdir -p .release
+          pnpm --filter @spidertrans/customs-cli pack --pack-destination .release
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: .release/*.tgz
+          generate_release_notes: true

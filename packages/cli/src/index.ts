@@ -83,8 +83,8 @@ function helpText(): string {
     "  customs help",
     "",
     "Examples:",
-    "  npx @spidertrans/customs-cli check --country AU --item battery",
-    "  npx @spidertrans/customs-cli search \"protein powder\" --country CA",
+    "  customs check --country AU --item battery",
+    "  customs search \"protein powder\" --country CA",
     "",
     `Register: ${REGISTER_URL}`
   ].join("\n");
