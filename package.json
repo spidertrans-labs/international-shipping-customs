@@ -1,0 +1,34 @@
+{
+  "name": "international-shipping-customs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bilingual customs lookup for shipments to Australia, the United States, Canada, and the United Kingdom.",
+  "license": "MIT",
+  "homepage": "https://spidertrans-labs.github.io/international-shipping-customs/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spidertrans-labs/international-shipping-customs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spidertrans-labs/international-shipping-customs/issues"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @spidertrans/web dev",
+    "build": "pnpm --filter @spidertrans/customs-cli build && pnpm --filter @spidertrans/web build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "vitest run",
+    "validate:data": "tsx scripts/validate-data.ts",
+    "check:links": "tsx scripts/check-sources.ts",
+    "check": "pnpm validate:data && pnpm typecheck && pnpm test && pnpm build && pnpm check:links"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

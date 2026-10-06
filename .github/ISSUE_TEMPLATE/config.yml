@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Shipping or registration support
+    url: https://spidertrans.cn/contact
+    about: Contact Spidertrans for a route, price, warehouse, or shipment question.
+  - name: Security or privacy report
+    url: mailto:info@spidertrans.com
+    about: Report a privacy, security, or data exposure concern privately.

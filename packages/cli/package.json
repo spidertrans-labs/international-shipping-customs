@@ -1,0 +1,52 @@
+{
+  "name": "@spidertrans/customs-cli",
+  "version": "0.1.0",
+  "description": "CLI for checking customs rules for Australia, the United States, Canada, and the United Kingdom.",
+  "license": "MIT",
+  "author": "红蜘蛛（广东）集运物流有限公司",
+  "homepage": "https://spidertrans-labs.github.io/international-shipping-customs/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spidertrans-labs/international-shipping-customs.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/spidertrans-labs/international-shipping-customs/issues"
+  },
+  "keywords": [
+    "customs",
+    "international-shipping",
+    "consolidation",
+    "logistics",
+    "australia",
+    "canada",
+    "united-kingdom",
+    "united-states"
+  ],
+  "type": "module",
+  "bin": {
+    "customs": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@spidertrans/data": "workspace:*",
+    "@spidertrans/schema": "workspace:*",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  }
+}
